@@ -26,7 +26,6 @@ button.link { background: none; color: #2b6a3d; padding: 0; text-decoration: und
 .day h3 { margin: 18px 0 8px; font-size: 15px; color: #5b6478; }
 .slot { border: 1px solid #e3e7f1; border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; }
 .slot.booked { background: #e4e7ee; border-color: #d3d7e2; color: #8a92a6; }
-.slot.booked strong { text-decoration: line-through; }
 .badge { font-size: 12px; background: #c9cedb; color: #4a5266; padding: 4px 10px; border-radius: 999px; }.slot-row { display: flex; justify-content: space-between; align-items: center; }
 .slot form { margin-top: 10px; }
 .badge { font-size: 12px; background: #dfe3ee; padding: 4px 10px; border-radius: 999px; }
