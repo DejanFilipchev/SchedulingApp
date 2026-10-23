@@ -95,9 +95,9 @@ app.post(
 );
 
 app.post(
-    "/api/slots/:id/book",
+    "/api/book",
     h(async (req, res) => {
-      const id = Number(req.params.id);
+        const id = Number(req.body?.id);
       const name = String(req.body?.name ?? "").trim();
       const email = String(req.body?.email ?? "").trim();
       const description = String(req.body?.description ?? "").trim().slice(0, 500);
@@ -127,9 +127,9 @@ app.post(
 );
 
 app.delete(
-    "/api/slots/:id",
+    "/api/slots",
     h(async (req, res) => {
-      const id = Number(req.params.id);
+        const id = Number(req.query.id);
       if (!Number.isInteger(id)) return res.status(404).json({ error: "Slot not found" });
       const result = await pool.query("DELETE FROM slots WHERE id = $1", [id]);
       if (result.rowCount === 0) return res.status(404).json({ error: "Slot not found" });

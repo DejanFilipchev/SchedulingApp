@@ -30,7 +30,7 @@ export const createSlot = (input: {
 }) => request<Slot>("/api/slots", { method: "POST", body: JSON.stringify(input) });
 
 export const bookSlot = (id: number, input: { name: string; email: string; description: string }) =>
-    request<BookingResult>(`/api/slots/${id}/book`, {
+    request<BookingResult>("/api/book", {
       method: "POST",
-      body: JSON.stringify(input)
+      body: JSON.stringify({ id, ...input })
     });
