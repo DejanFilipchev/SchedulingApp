@@ -5,7 +5,6 @@ export type Slot = {
   duration: number;
   subject: string;
   booked: boolean;
-  bookedName: string | null;
 };
 
 export type BookingResult = { slot: Slot; confirmation: string };

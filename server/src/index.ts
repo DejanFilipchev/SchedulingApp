@@ -19,13 +19,12 @@ type Row = {
 };
 
 const toSlot = (r: Row) => ({
-  id: r.id,
-  date: r.date,
-  startTime: r.start_time,
-  duration: r.duration,
-  subject: r.subject,
-  booked: r.booked_name !== null,
-  bookedName: r.booked_name
+    id: r.id,
+    date: r.date,
+    startTime: r.start_time,
+    duration: r.duration,
+    subject: r.subject,
+    booked: r.booked_name !== null
 });
 
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
@@ -55,10 +54,10 @@ app.use(async (_req, _res, next) => {
 app.get(
     "/api/slots",
     h(async (_req, res) => {
-      const { rows } = await pool.query<Row>(
-          "SELECT * FROM slots WHERE booked_name IS NULL ORDER BY date, start_time"
-      );
-      res.json(rows.map(toSlot));
+        const { rows } = await pool.query<Row>(
+            "SELECT * FROM slots ORDER BY date, start_time"
+        );
+        res.json(rows.map(toSlot));
     })
 );
 
