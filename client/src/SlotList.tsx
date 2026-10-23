@@ -45,11 +45,6 @@ export default function SlotList({ slots, onChange }: Props) {
     try {
       const result = await bookSlot(id, { name, email, description });
       setConfirmation({ id, text: result.confirmation });
-      getConfirmation(id)
-          .then((r) =>
-              setConfirmation((prev) => (prev && prev.id === id ? { id, text: r.confirmation } : prev))
-          )
-          .catch(() => {});
       setOpenId(null);
       setName("");
       setEmail("");
